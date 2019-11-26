@@ -1,0 +1,12 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    container:
+      image: hashicorp/packer:latest
+      options: --entrypoint /bin/sh
+    steps:
+      - run: packer --version
